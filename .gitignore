@@ -1,0 +1,15 @@
+# Data directories (contain your actual data)
+data/
+
+# Config with credentials
+config.js
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
