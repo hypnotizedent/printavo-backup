@@ -1,0 +1,214 @@
+{
+  "_comment": "This is a SANITIZED example showing the structure of extracted data",
+  "extractedAt": "2026-01-07T12:00:00.000Z",
+  "type": "invoice",
+  "printavoId": "12345678",
+  "visualId": "10001",
+  "id": "12345678",
+  "nickname": "Sample Order - Company T-Shirts",
+  "total": 500.00,
+  "subtotal": 465.00,
+  "totalUntaxed": 450.00,
+  "discount": 0,
+  "discountAsPercentage": false,
+  "discountAmount": 0,
+  "salesTax": 7.5,
+  "salesTaxAmount": 35.00,
+  "amountPaid": 500.00,
+  "amountOutstanding": 0,
+  "paidInFull": true,
+  "totalQuantity": 50,
+  "productionNote": "Rush order - ship by Friday",
+  "customerNote": "Please use the updated logo file",
+  "createdAt": "2025-12-15",
+  "customerDueAt": "2025-12-20",
+  "dueAt": "2025-12-19T17:00:00.000Z",
+  "publicUrl": "https://printavo.com/orders/abc123",
+  "publicPdf": "https://printavo.com/orders/abc123.pdf",
+  "tags": ["rush", "repeat-customer"],
+  "timestamps": {
+    "createdAt": "2025-12-15T10:30:00.000Z",
+    "updatedAt": "2025-12-18T14:22:00.000Z"
+  },
+  "status": {
+    "id": "100",
+    "name": "Shipped",
+    "color": "#00aa00",
+    "type": "INVOICE"
+  },
+  "contact": {
+    "id": "5000",
+    "fullName": "Jane Doe",
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "customer@example.com",
+    "phone": "555-123-4567",
+    "customer": {
+      "id": "3000",
+      "companyName": "Acme Corporation"
+    }
+  },
+  "owner": {
+    "id": "1",
+    "email": "owner@printshop.com",
+    "name": "Shop Owner"
+  },
+  "billingAddress": {
+    "address1": "123 Main Street",
+    "address2": "Suite 100",
+    "city": "Anytown",
+    "state": "Florida",
+    "stateIso": "FL",
+    "zipCode": "33000",
+    "country": "United States",
+    "countryIso": "US"
+  },
+  "shippingAddress": {
+    "address1": "456 Shipping Lane",
+    "city": "Anytown",
+    "state": "Florida",
+    "stateIso": "FL",
+    "zipCode": "33001"
+  },
+  "deliveryMethod": {
+    "id": "1",
+    "name": "UPS Ground"
+  },
+  "paymentTerm": {
+    "id": "2",
+    "name": "Net 30"
+  },
+  "lineItemGroups": {
+    "nodes": [
+      {
+        "id": "lg-001",
+        "position": 1,
+        "imprints": {
+          "nodes": [
+            {
+              "id": "imp-001",
+              "details": "Left Chest - 4\" wide\n1 Color - PMS 286 Blue",
+              "typeOfWork": {
+                "id": "1",
+                "name": "Screen Printing"
+              },
+              "mockups": {
+                "nodes": [
+                  {
+                    "id": "mock-imp-001",
+                    "fullImageUrl": "https://cdn.filepicker.io/EXAMPLE_ID_1?cache=true+.png",
+                    "mimeType": "image/png"
+                  }
+                ]
+              }
+            },
+            {
+              "id": "imp-002",
+              "details": "Full Back - 12\" wide\n1 Color - PMS 286 Blue",
+              "typeOfWork": {
+                "id": "1",
+                "name": "Screen Printing"
+              },
+              "mockups": {
+                "nodes": [
+                  {
+                    "id": "mock-imp-002",
+                    "fullImageUrl": "https://cdn.filepicker.io/EXAMPLE_ID_2?cache=true+.png",
+                    "mimeType": "image/png"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "lineItems": {
+          "nodes": [
+            {
+              "id": "li-001",
+              "description": "Gildan G500 - Heavy Cotton T-Shirt",
+              "color": "Navy",
+              "itemNumber": "G500",
+              "category": {
+                "id": "1",
+                "name": "Screen Printing"
+              },
+              "price": 9.00,
+              "items": 50,
+              "taxed": true,
+              "productStatus": "ORDERED",
+              "sizes": [
+                { "size": "size_s", "count": 5 },
+                { "size": "size_m", "count": 15 },
+                { "size": "size_l", "count": 15 },
+                { "size": "size_xl", "count": 10 },
+                { "size": "size_2xl", "count": 5 }
+              ],
+              "mockups": {
+                "nodes": [
+                  {
+                    "id": "mock-li-001",
+                    "fullImageUrl": "https://cdn.filepicker.io/EXAMPLE_ID_3?cache=true+.png",
+                    "mimeType": "image/png"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "productionFiles": {
+    "nodes": [
+      {
+        "id": "pf-001",
+        "fileUrl": "https://cdn.filepicker.io/EXAMPLE_ID_4",
+        "name": "company-logo-final.ai",
+        "mimeType": "application/illustrator"
+      }
+    ]
+  },
+  "fees": {
+    "nodes": [
+      {
+        "id": "fee-001",
+        "description": "Screen Setup (2 screens)",
+        "amount": 50.00,
+        "quantity": 1,
+        "taxable": true
+      }
+    ]
+  },
+  "expenses": {
+    "nodes": [
+      {
+        "id": "exp-001",
+        "name": "Blank Goods",
+        "amount": 200.00,
+        "transactionAt": "2025-12-16"
+      }
+    ]
+  },
+  "tasks": {
+    "nodes": [
+      {
+        "id": "task-001",
+        "name": "Print Order",
+        "dueAt": "2025-12-18",
+        "completed": true,
+        "completedAt": "2025-12-18T10:00:00.000Z"
+      }
+    ]
+  },
+  "transactions": {
+    "nodes": [
+      {
+        "id": "pay-001",
+        "amount": 500.00,
+        "transactionDate": "2025-12-15",
+        "category": "CREDIT_CARD",
+        "description": "Paid in full via Square"
+      }
+    ]
+  }
+}
