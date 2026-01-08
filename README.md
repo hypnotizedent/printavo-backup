@@ -116,9 +116,13 @@ See [docs/FILE_RECOVERY.md](docs/FILE_RECOVERY.md) for detailed artwork download
 
 | Script | Purpose |
 |--------|--------|
+| `verify-preflight.js` | Tests API access before full extraction |
 | `extract-all-data.js` | Main extraction - pulls all orders via GraphQL |
 | `download-files.js` | Downloads artwork from Filestack CDN |
-| `verify-preflight.js` | Tests API access before full extraction |
+| `run-extract.sh` | Auto-restart wrapper with retry for long extractions |
+| `audit-data.js` | Analyzes extracted data for integrity/quality |
+| `backup-restore.sh` | Verifies backup integrity, searches invoices, finds artwork |
+| `extract-artwork-clean.sh` | Extracts artwork/production file data using jq |
 
 ## Contributing
 
