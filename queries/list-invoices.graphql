@@ -1,0 +1,16 @@
+# List all invoices with pagination
+# Use this to get IDs for individual order fetching
+
+query ListInvoices($cursor: String) {
+  invoices(first: 25, after: $cursor, sortOn: VISUAL_ID, sortDescending: true) {
+    nodes {
+      id
+      visualId
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    totalNodes
+  }
+}

@@ -1,0 +1,75 @@
+# Query 3 of 3: Files and financials
+# Low complexity (~5,000 points)
+# Fetches: production files, fees, expenses, tasks, payments
+
+query GetOrderFilesFinancial($id: ID!) {
+  invoice(id: $id) {  # Change to 'quote' for quotes
+    id
+    
+    # Production Files (print-ready artwork)
+    productionFiles(first: 50) {
+      nodes {
+        id
+        fileUrl       # <-- FILESTACK URL
+        name
+        mimeType
+      }
+    }
+    
+    # Fees
+    fees(first: 30) {
+      nodes {
+        id
+        description
+        amount
+        quantity
+        unitPrice
+        unitPriceAsPercentage
+        taxable
+      }
+    }
+    
+    # Expenses
+    expenses(first: 30) {
+      nodes {
+        id
+        name
+        amount
+        transactionAt
+        userGenerated
+      }
+    }
+    
+    # Tasks
+    tasks(first: 30) {
+      nodes {
+        id
+        name
+        dueAt
+        completed
+        completedAt
+      }
+    }
+    
+    # Payments & Refunds
+    transactions(first: 30) {
+      nodes {
+        ... on Payment {
+          id
+          amount
+          transactionDate
+          category        # CREDIT_CARD, CHECK, CASH, etc.
+          processing
+          source
+          description
+        }
+        ... on Refund {
+          id
+          amount
+          transactionDate
+          category
+        }
+      }
+    }
+  }
+}

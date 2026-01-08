@@ -1,0 +1,78 @@
+# Query 2 of 3: Line items and imprints
+# Medium complexity (~10,000-15,000 points)
+# Fetches: line item groups, line items, sizes, imprints, mockups
+
+query GetOrderLineItems($id: ID!) {
+  invoice(id: $id) {  # Change to 'quote' for quotes
+    id
+    
+    lineItemGroups(first: 10) {
+      nodes {
+        id
+        position
+        
+        # Imprints (decorations)
+        imprints(first: 10) {
+          nodes {
+            id
+            details
+            typeOfWork {
+              id
+              name
+            }
+            # Imprint mockups (print close-ups)
+            mockups(first: 5) {
+              nodes {
+                id
+                fullImageUrl    # <-- FILESTACK URL
+                thumbnailUrl
+                mimeType
+              }
+            }
+          }
+        }
+        
+        # Line Items (products)
+        lineItems(first: 15) {
+          nodes {
+            id
+            description
+            color
+            itemNumber
+            category {
+              id
+              name
+            }
+            position
+            price
+            items           # total quantity
+            taxed
+            markupPercentage
+            productStatus
+            product {
+              id
+              description
+              itemNumber
+              brand
+              color
+            }
+            # Size breakdown
+            sizes {
+              size    # e.g., "size_m", "size_xl"
+              count
+            }
+            # Line item mockups (garment visualizations)
+            mockups(first: 5) {
+              nodes {
+                id
+                fullImageUrl    # <-- FILESTACK URL
+                thumbnailUrl
+                mimeType
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

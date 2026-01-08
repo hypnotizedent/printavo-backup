@@ -1,0 +1,16 @@
+# List all quotes with pagination
+# Use this to get IDs for individual order fetching
+
+query ListQuotes($cursor: String) {
+  quotes(first: 25, after: $cursor, sortOn: VISUAL_ID, sortDescending: true) {
+    nodes {
+      id
+      visualId
+    }
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    totalNodes
+  }
+}

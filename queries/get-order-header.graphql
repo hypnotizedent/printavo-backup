@@ -1,0 +1,111 @@
+# Query 1 of 3: Order header data
+# Low complexity (~5,000 points)
+# Fetches: basic info, status, contact, addresses
+
+query GetOrderHeader($id: ID!) {
+  invoice(id: $id) {  # Change to 'quote' for quotes
+    id
+    visualId
+    nickname
+    
+    # Financials
+    total
+    subtotal
+    totalUntaxed
+    discount
+    discountAsPercentage
+    discountAmount
+    salesTax
+    salesTaxAmount
+    amountPaid
+    amountOutstanding
+    paidInFull
+    totalQuantity
+    
+    # Notes
+    productionNote
+    customerNote
+    
+    # Dates
+    createdAt
+    customerDueAt
+    paymentDueAt
+    invoiceAt
+    dueAt
+    startAt
+    
+    # URLs
+    publicUrl
+    publicPdf
+    publicHash
+    workorderUrl
+    packingSlipUrl
+    url
+    
+    # Other
+    visualPoNumber
+    tags
+    timestamps { createdAt updatedAt }
+    
+    # Status
+    status {
+      id
+      name
+      color
+      position
+      type
+    }
+    
+    # Contact & Customer
+    contact {
+      id
+      fullName
+      firstName
+      lastName
+      email
+      phone
+      fax
+      customer {
+        id
+        companyName
+      }
+    }
+    
+    # Owner
+    owner {
+      id
+      email
+      name
+    }
+    
+    # Addresses
+    billingAddress {
+      address1
+      address2
+      city
+      state
+      stateIso
+      zipCode
+      country
+      countryIso
+      companyName
+      customerName
+    }
+    shippingAddress {
+      address1
+      address2
+      city
+      state
+      stateIso
+      zipCode
+      country
+      countryIso
+      companyName
+      customerName
+    }
+    
+    # Delivery & Payment
+    deliveryMethod { id name }
+    paymentTerm { id name }
+  }
+}
